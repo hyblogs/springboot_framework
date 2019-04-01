@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.framework.mapper.SysUserGroupMapper">
+  <resultMap id="BaseResultMap" type="com.framework.entity.mapping.SysUserGroup">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="group_code" jdbcType="VARCHAR" property="groupCode" />
+    <result column="group_name" jdbcType="VARCHAR" property="groupName" />
+    <result column="group_type" jdbcType="TINYINT" property="groupType" />
+    <result column="group_desc" jdbcType="VARCHAR" property="groupDesc" />
+    <result column="group_state" jdbcType="TINYINT" property="groupState" />
+    <result column="pid" jdbcType="BIGINT" property="pid" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <select id="selectByGen">
+    <!-- 
+    WARNING - @mbg.generated  
+    -->  
+    SELECT 
+        id AS id , 
+        group_code AS groupCode , 
+        group_name AS groupName , 
+        group_type AS groupType , 
+        group_desc AS groupDesc , 
+        group_state AS groupState , 
+        pid AS pid , 
+        create_time AS createTime , 
+        update_time AS updateTime , 
+        remark AS remark  
+    FROM 
+        sys_user_group
+  </select>
+</mapper>

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.3.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com</groupId>
+    <artifactId>springboot_framework</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>springboot_framework</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!-- 打包跳过单元测试 -->
+        <skipTests>true</skipTests>
+        <!-- 数据源组件 -->
+        <mysql-connector-java.version>5.1.47</mysql-connector-java.version>
+        <druid-srping-boot-start.version>1.1.10</druid-srping-boot-start.version>
+        <!-- 分页组件 -->
+        <pagehelper.version>5.0.3</pagehelper.version>
+        <springboot-pagehelper.version>1.2.3</springboot-pagehelper.version>
+        <!-- ORM组件 -->
+        <org.mybatis.spring.boot.version>2.0.0</org.mybatis.spring.boot.version>
+        <!-- 通用Mapper组件 -->
+        <mapper.version>3.4.0</mapper.version>
+        <mapper-spring-boot-starter.version>1.2.4</mapper-spring-boot-starter.version>
+
+        <!-- RocketMQ组件 -->
+        <rocketmq-client.version>4.2.0</rocketmq-client.version>
+        <!-- Memcached组件 -->
+        <Memcached-Java-Client.version>3.0.2</Memcached-Java-Client.version>
+        <spymemcached.version>2.11.7</spymemcached.version>
+
+        <!--hykit-->
+        <hykit.version>1.0.1</hykit.version>
+        <!-- Json组件 -->
+        <fastjson.version>1.2.47</fastjson.version>
+        <!-- Http操作组件 -->
+        <httpclient.version>4.5.5</httpclient.version>
+        <httpcore.version>4.4.9</httpcore.version>
+        <httpmime.version>4.5.5</httpmime.version>
+        <!-- Commons组件(其他Jar包会依赖Commons) -->
+        <commons-codec.version>1.11</commons-codec.version>
+        <apache.common.beanutils.version>1.9.3</apache.common.beanutils.version>
+        <apache.common.collections.version>3.2.1</apache.common.collections.version>
+        <!-- 文件上传 -->
+        <apache.common.fileupload.version>1.3.2</apache.common.fileupload.version>
+        <apache.common.httpclient.version>4.5.2</apache.common.httpclient.version>
+        <apache.common.io.version>2.5</apache.common.io.version>
+        <apache.common.lang3.version>3.4</apache.common.lang3.version>
+        <commons-httpclient>3.1-rc1</commons-httpclient>
+
+        <!-- 数据库反向生成实体及Mapper组件 -->
+        <com.google.code.gson.version>2.7</com.google.code.gson.version>
+        <org.eclipse.jdt.core>3.10.0</org.eclipse.jdt.core>
+        <org.mybatis.generator>1.3.5</org.mybatis.generator>
+
+        <!-- mongo依赖组件 -->
+        <org.apache.poi.version>3.17</org.apache.poi.version>
+
+        <!-- log4j -->
+        <log4j.version>1.2.17</log4j.version>
+    </properties>
+
+    <dependencies>
+        <!-- RabbitMQ消息队列组件 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
+        <!-- mongodb文档数据库组件 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+
+        <!-- Redis缓存组件 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <!-- Security安全组件 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+
+        <!-- 模板组件 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+        <!-- WEB组件 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- ORM组件 -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${org.mybatis.spring.boot.version}</version>
+        </dependency>
+        <!-- 数据源组件 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${druid-srping-boot-start.version}</version>
+        </dependency>
+        <!-- 测试组件 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- mongo依赖组件 -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${org.apache.poi.version}</version>
+        </dependency>
+        <!-- 通用Mapper -->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>${mapper-spring-boot-starter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+            <version>${mapper.version}</version>
+        </dependency>
+        <!-- 分页组件 -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>${pagehelper.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-autoconfigure</artifactId>
+            <version>${springboot-pagehelper.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>${springboot-pagehelper.version}</version>
+        </dependency>
+        <!--RocketMQ-->
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-client</artifactId>
+            <version>${rocketmq-client.version}</version>
+        </dependency>
+        <!--MemCached-->
+        <dependency>
+            <groupId>com.whalin</groupId>
+            <artifactId>Memcached-Java-Client</artifactId>
+            <version>${Memcached-Java-Client.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.spy</groupId>
+            <artifactId>spymemcached</artifactId>
+            <version>${spymemcached.version}</version>
+        </dependency>
+
+
+        <!--******数据库反向生成实体类及对应的mapper接口和mapper.xml文件*****-->
+        <!-- Mybatis Generator -->
+        <dependency>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-core</artifactId>
+            <version>${org.mybatis.generator}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jdt</groupId>
+            <artifactId>org.eclipse.jdt.core</artifactId>
+            <version>${org.eclipse.jdt.core}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${com.google.code.gson.version}</version>
+        </dependency>
+
+        <!-- Json组件 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+        <!-- http操作组件 -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpclient.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>${httpcore.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpmime</artifactId>
+            <version>${httpmime.version}</version>
+        </dependency>
+
+        <!-- Commons组件 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>${apache.common.beanutils.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${commons-codec.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>${commons-httpclient}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>${apache.common.fileupload.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${apache.common.io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>${apache.common.collections.version}</version>
+        </dependency>
+
+        <!-- hykit(自有工具箱) -->
+        <dependency>
+            <groupId>com.hy</groupId>
+            <artifactId>hykit</artifactId>
+            <version>${hykit.version}</version>
+        </dependency>
+
+        <!-- log -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>${skipTests}</skipTests>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

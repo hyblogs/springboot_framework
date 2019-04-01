@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.framework.mapper.SysColumnBtnMapper">
+  <resultMap id="BaseResultMap" type="com.framework.entity.mapping.SysColumnBtn">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="sys_column_id" jdbcType="BIGINT" property="sysColumnId" />
+    <result column="sys_btn_id" jdbcType="BIGINT" property="sysBtnId" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <select id="selectByGen">
+    <!-- 
+    WARNING - @mbg.generated  
+    -->  
+    SELECT 
+        id AS id , 
+        sys_column_id AS sysColumnId , 
+        sys_btn_id AS sysBtnId , 
+        remark AS remark  
+    FROM 
+        sys_column_btn
+  </select>
+</mapper>
