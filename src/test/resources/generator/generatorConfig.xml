@@ -41,9 +41,9 @@
     <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
 
     <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                    connectionURL="jdbc:mysql://123.56.18.97:3306/framework"
+                    connectionURL="jdbc:mysql://127.0.0.1:3306/framework"
                     userId="root"
-                    password="hy865571.">
+                    password="123456">
     </jdbcConnection>
 
     <javaModelGenerator targetPackage="com.framework.entity.mapping" targetProject="src/main/java"/>
