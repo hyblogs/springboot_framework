@@ -52,7 +52,7 @@
         <apache.common.beanutils.version>1.9.3</apache.common.beanutils.version>
         <apache.common.collections.version>3.2.1</apache.common.collections.version>
         <!-- 文件上传 -->
-        <apache.common.fileupload.version>1.3.2</apache.common.fileupload.version>
+        <apache.common.fileupload.version>1.3.3</apache.common.fileupload.version>
         <apache.common.httpclient.version>4.5.2</apache.common.httpclient.version>
         <apache.common.io.version>2.5</apache.common.io.version>
         <apache.common.lang3.version>3.4</apache.common.lang3.version>
